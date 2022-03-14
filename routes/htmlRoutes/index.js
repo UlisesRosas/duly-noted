@@ -1,6 +1,6 @@
 // this file has routes to return html files 
 // path module to work with directories and files paths
-const path = riquire('path');
+const path = require('path');
 const router = require('express').Router();
 
 // connects the front end
@@ -16,3 +16,9 @@ router.get('*', (req,res) => {
     res.sendFile(path.join(__dirname,'../Develop/public/index.html'))
 });
 module.exports = router;
+
+
+
+
+// inport routes in to an index file then export it using module.exports because node
+// will look for the modules in an index file

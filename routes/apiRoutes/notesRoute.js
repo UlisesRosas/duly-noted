@@ -1,16 +1,11 @@
 // const router = require('express').Router();
 // require the object 
-const { db } = requires('../../Develop/db/db');
+const { db } = require('../../Develop/db/db');
 
-const noteRoutes = require('./notesRoute.js');
 const router = require('express').Router();
 
-router.use('/notes', noteRoutes);
-
-module.exports = router;
-
 // route to get all notes
-router.get('/db', (req, res) => {
+router.get('/', (req, res) => {
     if(res) {
         // responds with json file in json form
         res.json(db);
@@ -20,8 +15,10 @@ router.get('/db', (req, res) => {
 });
 
 // route to add anew note 
-router.post('/db', (req, res) => {
-    const {newNote} = req.body;
+router.post('/', (req, res) => {
+    const {title, text} = req.body;
+    // add the new note to the db var
+    // write the db var to db.json
  });
 
 
