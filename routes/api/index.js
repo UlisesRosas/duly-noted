@@ -45,9 +45,10 @@ res.json(db);
 router.delete('/notes/:id', (req, res) => {
     const noteId = req.params.id
     const notes = req.body;
+    console.log(notes);
     // gets id param form browser
       // filter method for arrays 
-    const resultNote = notes.filter(note => note.id === noteId);
+      const resultNote = notes.filter((note) => note.id === noteId);
     // update the array
     db.push(resultNote);
     // then we updadate by using fs writefile
