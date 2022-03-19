@@ -44,6 +44,7 @@ res.json(db);
  //  delete route
 router.delete('/notes/:id', (req, res) => {
     const noteId = req.params.id
+    // ***** this variable is probably causing the problem because its not targeting an array
     const notes = req.body;
     console.log(notes);
     // gets id param form browser
@@ -55,5 +56,13 @@ router.delete('/notes/:id', (req, res) => {
     fs.writeFileSync('db/db.json',JSON.stringify(db))
 });
 
+// app.delete('/api/notes/:id', (req, res) => {
+//   const { id } = req.params;
+
+//   const delNote = notes.findIndex(note => note.id ==id);
+
+//   notes.splice(delNote, 1);
+//   return res.send();
+// });
 
 module.exports = router;
