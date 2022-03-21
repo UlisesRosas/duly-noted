@@ -5,5 +5,7 @@ This application makes keeping your important thoughts and small details oganize
 As any busy person there are a lot of tasks that may arize. This app makes it possible quickly note and organize your tasks and ideas.
 
 # Built With 
+*HTML *CSS *JavaScript *Node.js *Express.js *Heroku
 
 # Contributions 
+[Ulises rosas]
