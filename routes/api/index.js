@@ -41,28 +41,32 @@ res.json(db);
  });
 
 
- //  delete route
-router.delete('/notes/:id', (req, res) => {
-    const noteId = req.params.id
-    // ***** this variable is probably causing the problem because its not targeting an array
-    const notes = req.body;
-    console.log(notes);
-    // gets id param form browser
-      // filter method for arrays 
-      const resultNote = notes.filter((note) => note.id === noteId);
-    // update the array
-    db.push(resultNote);
-    // then we updadate by using fs writefile
-    fs.writeFileSync('db/db.json',JSON.stringify(db))
-});
-
-// app.delete('/api/notes/:id', (req, res) => {
-//   const { id } = req.params;
-
-//   const delNote = notes.findIndex(note => note.id ==id);
-
-//   notes.splice(delNote, 1);
-//   return res.send();
+//  //  delete route
+// router.delete('/notes/:id', (req, res) => {
+//     const noteId = req.params
+//     // ***** this variable is probably causing the problem because its not targeting an array
+//     const notes = req.body;
+//     console.log(notes);
+//     // gets id param form browser
+//       // filter method for arrays 
+//       const resultNote = notes.filter((note) => note.id === noteId);
+//     // update the array
+//     db.push(resultNote);
+//     // then we updadate by using fs writefile
+//     fs.writeFileSync('db/db.json',JSON.stringify(db))
 // });
+
+ router.delete('/notes/:id', (req, res) => {
+  // deconstructs the obljecy to get the id attribute 
+  const { id } = req.params;
+  // holds the json object 
+  const notes = db;
+// gets the index of the element in array with the id selected and compares the value because its a string vs int we use == otherwise pars it first to use ===
+   const delNote = notes.findIndex(note => note.id == id);
+  //  deletes note from jason array
+   notes.splice(delNote, 1);
+  //  sends the request to server
+  return res.send();
+ });
 
 module.exports = router;
