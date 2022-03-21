@@ -7,9 +7,9 @@ As any busy person there are a lot of tasks that may arize. This app makes it po
 # Built With 
 *HTML *CSS *JavaScript *Node.js *Express.js *Heroku
 # Website 
-[Link to Websit](https://calm-headland-58342.herokuapp.com/)
+[Link to Websit](https://calm-headland-58342.herokuapp.com)
 ![website menu](./public/assets/images/note-taker-menu.png)
 ![website notes](./public/assets/images/note-taker-notes.png)
 
 # Contributions 
-[Ulises rosas]
+[Ulises Rosas]
